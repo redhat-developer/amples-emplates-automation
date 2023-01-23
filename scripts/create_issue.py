@@ -21,6 +21,7 @@ def _make_gihub_request(method="post", uri="issues", body=None, params={}, heade
     elif(method == "put"):
         request_method = requests.put
     response = request_method(url, params=params, headers=headers, json=body)
+    print(" response in create_issue.py : " + str(response))
     try:
         response.raise_for_status()
     except Exception as e:
