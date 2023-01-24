@@ -270,7 +270,8 @@ def main():
         # Now, append sample-msg.yml file
         sample_msg_file_content +="\nmsg-id: " + str(msg_id)
         print("Updating sample-msg.yml file")
-        fileurl = str(pr_url.split("/pulls")[0]) + "/contents/" + str(filename) + "?ref=" + str(source_branch)
+        fileurl = "https://api.github.com/repos/" + str(src_repo) + "/contents/" + str(filename) + "?ref=" + str(source_branch)
+        #fileurl = str(pr_url.split("/pulls")[0]) + "/contents/" + str(filename) + "?ref=" + str(source_branch)
         print("File being udpated : " + str(fileurl))
         if(update_file(filename=fileurl, content=sample_msg_file_content)):
             print("Updated sample-msg.yml file successfully!")
@@ -280,7 +281,8 @@ def main():
         
         # Once we are here, sample-msg.yml file should be in correct format.
         # Now, update state-msg.yml file with msg-id and issue-url.
-        state_msg_url = base_url + "/contents/state" + "/" + str(msg_id) + ".yml" + "?ref="+str(source_branch)
+        state_msg_url = "https://api.github.com/repos/" + str(src_repo) + "/contents/state" + "/" + str(msg_id) + ".yml" + "?ref="+str(source_branch)
+        #state_msg_url = base_url + "/contents/state" + "/" + str(msg_id) + ".yml" + "?ref="+str(source_branch)
         print("URL generated for state file  : " + str(state_msg_url))
         headers = {'Accept': 'application/vnd.github.v3+json'}
         #state_file_content = requests.get(state_msg_url, headers=headers).text
