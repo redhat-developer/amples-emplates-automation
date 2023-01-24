@@ -18,11 +18,14 @@ import base64
 parser = argparse.ArgumentParser()
 parser.add_argument("--pr_url", help="Name of the yaml file which triggered this action")
 parser.add_argument("--branch", help="Source branch from where PR is generated")
+parser.add_argument("--src_repo", help="Source repo from where PR is generated")
 args = parser.parse_args()
 
 pr_url = args.pr_url
 source_branch = args.branch
+src_repo = args.src_repo
 print("Received Data: ", pr_url)
+print("Source Repo : ", src_repo)
 gFilename = "" # This will be used whie updating the issue.
 gMessageId = "" # This variable will store the message id (either newly generated or previously generated)
 MAX_RANDOM = 1000000
