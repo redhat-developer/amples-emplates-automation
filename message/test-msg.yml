@@ -4,3 +4,4 @@ recepient_type: all
 msg-id: 1674578667
 comment:
  - This issue is for testing purpose. Would be closing this issue.
+close: true
