@@ -4,3 +4,4 @@ recepient_type: imagestreams
 msg-id: 1674555162
 comment:
  - This issue was created for testing purpose, hence no action is required. Would be closing this issue.
+close: true
